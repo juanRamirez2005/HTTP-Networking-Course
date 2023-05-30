@@ -1,23 +1,27 @@
 const apiKey = generateKey();
-const items = await getItemData();
+const url = getURL();
+const settings = getSettings();
 
-logItems(items);
+const response = fetch(url, settings);
+const responseData = await response.json();
+
+logItems(responseData);
 
 // don't touch below this line
 
-async function getItemData() {
-  const response = await fetch(
-    "https://api.boot.dev/v1/courses_rest_api/learn-http/items",
-    {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "X-API-Key": apiKey,
-        "Content-Type": "application/json",
-      },
-    }
-  );
-  return response.json();
+function getSettings() {
+  return {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "X-API-Key": apiKey,
+      "Content-Type": "application/json",
+    },
+  };
+}
+
+function getURL() {
+  return "https://api.boot.dev/v1/courses_rest_api/learn-http/items";
 }
 
 function generateKey() {
@@ -30,7 +34,7 @@ function generateKey() {
 }
 
 function logItems(items) {
-  for (const item of items) {
+  for (item of items) {
     console.log(item.name);
   }
 }
