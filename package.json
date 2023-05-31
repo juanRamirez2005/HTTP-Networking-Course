@@ -1,0 +1,16 @@
+{
+  "name": "http-networking-course",
+  "version": "1.0.0",
+  "description": "ejemplos de HTTP",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "caddy": "^0.0.13"
+  }
+}
