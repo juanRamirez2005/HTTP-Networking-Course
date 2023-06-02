@@ -9,8 +9,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "caddy": "^0.0.13"
-  }
+  "license": "ISC"
 }
